@@ -3,11 +3,11 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {WeatherApiService} from "../../srv/weather-api.service";
 
 @Component({
-  selector: 'app-weather-app',
-  templateUrl: './weather-app.component.html',
-  styleUrls: ['./weather-app.component.scss']
+  selector: 'forecast-weather',
+  templateUrl: './forecast-weather.component.html',
+  styleUrls: ['./forecast-weather.component.scss']
 })
-export class WeatherAppComponent implements OnInit, OnChanges {
+export class ForecastWeather implements OnInit, OnChanges {
 
   @Input() globalCity: string;
 

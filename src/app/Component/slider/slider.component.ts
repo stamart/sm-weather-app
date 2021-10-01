@@ -8,7 +8,7 @@ SwiperCore.use([Pagination]);
   template: `
     <swiper [pagination]="true" class="mySwiper">
     <ng-template swiperSlide><current-weather [globalCity]="globalCity"></current-weather></ng-template>
-    <ng-template swiperSlide><app-weather-app [globalCity]="globalCity"></app-weather-app></ng-template>
+    <ng-template swiperSlide><forecast-weather [globalCity]="globalCity"></forecast-weather></ng-template>
     </swiper>
   `,
   styleUrls: ['./slider.component.scss'],

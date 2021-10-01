@@ -1,11 +1,5 @@
 <div>
-  <input
-    placeholder="searchCity"
-    [(ngModel)]="city"
-  >
+  <input placeholder="searchCity" [(ngModel)]="city">
   <button (click)="searchCityFunction(city)">search</button>
 </div>
-
 <app-slider [globalCity]="globalCity"></app-slider>
-
-<!--<app-weather-app></app-weather-app>-->
