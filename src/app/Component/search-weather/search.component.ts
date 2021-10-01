@@ -1,14 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {WeatherApiService} from "../../srv/weather-api.service";
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
-  WeatherObject:any;
-  constructor(private snackBar: MatSnackBar) {}
+export class SearchComponent implements OnInit, OnChanges {
+
+  @Input() globalCity: string;
+
+  WeatherObject: any;
+
+  constructor(private snackBar: MatSnackBar,private service: WeatherApiService) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getWeatherObject(this.globalCity);
+    }
 
   ngOnInit(): void {
     this.WeatherObject = {
@@ -16,15 +26,13 @@ export class SearchComponent implements OnInit {
       main : {},
       isDay: true
     };
-    this.getWeatherObject();
+    this.getWeatherObject(this.WeatherObject.city);
     console.log(this.WeatherObject);
   }
 
-  getWeatherObject(){
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.WeatherObject.city}&appid=8e6330f7f437106b517d425eedde9f72`)
-    .then(response=>response.json())
-    .then(data=>{this.handlerRespons(data);})
-    .catch(err=>{this.errorHandler(err)});
+  getWeatherObject(city :string){
+    this.service.getCurrentWeatherObject(city)
+      .then(data=>{this.handlerRespons(data);})
   }
 
   handlerRespons(weatherData:any){
@@ -68,9 +76,13 @@ export class SearchComponent implements OnInit {
     return convertedTemp;
   }
 
-  searchCityFunction(){
-    console.log('searchCity',this.WeatherObject.city);
-    this.getWeatherObject();
+  // searchCityFunction(){
+  //   console.log('searchCity',this.WeatherObject.city);
+  //   this.getWeatherObject();
+  // }
+
+  checkGlobalCity(){
+    console.log('searchCity',this.globalCity);
   }
 
   private isCorrectResponse(weatherData: any) {
