@@ -7,7 +7,9 @@ import { SwiperModule } from 'swiper/angular';
 import { SliderComponent } from './Component/slider/slider.component';
 import { SearchComponent } from './Component/search-weather/search.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { ConfirmationDialog } from './confirm-dialog/confirmation-dialog';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     SwiperModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

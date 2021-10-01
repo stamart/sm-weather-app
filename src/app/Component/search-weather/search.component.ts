@@ -25,13 +25,29 @@ export class SearchComponent implements OnInit {
   getWeatherObject(){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.WeatherObject.city}&appid=8e6330f7f437106b517d425eedde9f72`)
     .then(response=>response.json())
-    .then(data=>{this.setWeatherObject(data);});
+    .then(data=>{this.handlerRespons(data);})
+    .catch(err=>{this.errorHandler(err)});
+  }
+
+  handlerRespons(weatherData:any){
+    console.log('recived object',weatherData);
+    if(this.isCorrectResponse(weatherData)){
+      this.setWeatherObject(weatherData);
+    }else {
+      this.alertMessage(weatherData);
+    }
+  }
+
+  alertMessage(weatherData: any) {
+    console.log('Error:',weatherData.message);
+
+  }
+
+  errorHandler(err: any) {
+    console.log('Error',err);
   }
 
   setWeatherObject(weatherData: any) {
-
-    console.log('recived object',weatherData);
-
     this.WeatherObject = weatherData;
     let sunsetTime = new Date(this.WeatherObject.sys.sunset * 1000);
     this.WeatherObject.sunset_time = sunsetTime.toLocaleTimeString();
@@ -59,4 +75,7 @@ export class SearchComponent implements OnInit {
     this.getWeatherObject();
   }
 
+  private isCorrectResponse(weatherData: any) {
+    return weatherData.cod == '200';
+  }
 }
