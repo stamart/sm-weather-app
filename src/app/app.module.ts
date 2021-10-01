@@ -8,8 +8,6 @@ import { SliderComponent } from './Component/slider/slider.component';
 import { SearchComponent } from './Component/search-weather/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MultiAlertsComponent } from './Component/_alert/alert.component';
-
 
 @NgModule({
   declarations: [
@@ -23,7 +21,6 @@ import { MultiAlertsComponent } from './Component/_alert/alert.component';
     SwiperModule,
     HttpClientModule,
     FormsModule,
-    MultiAlertsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
