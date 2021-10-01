@@ -1,0 +1,45 @@
+<!--<mat-card>-->
+<!--  <mat-card-title>-->
+<!--    Weather in <span>{{WeatherObject.name}}</span>-->
+<!--  </mat-card-title>-->
+<!--</mat-card>>-->
+
+<div id="weatherMain">
+  <div *ngIf="WeatherObject.isDay" class="weatherWidgetRow">
+    <i class="fas fa-3x fa-sun sun"></i>
+  </div>
+
+  <div *ngIf="!WeatherObject.isDay" class="weatherWidgetRow">
+    <i class="fas fa-3x fa-moon moon"></i>
+  </div>
+
+  <div *ngIf="WeatherObject.isCloudy " class="weatherWidgetRow cloudDiv">
+    <i class="fas fa-3x fa-cloud-rain cloud"></i>
+  </div>
+
+  <div class="weatherWidgetRow" style="font-size: 35px; margin-top: 30px">{{WeatherObject.name}}  </div>
+  <div class="weatherWidgetRow"
+       style="font-size: 30px; font-weight: bold; margin-top: 10px;">{{WeatherObject.temp_celcius}}°
+  </div>
+  <div class="weatherWidgetRow" style="font-size: 15px; margin-top: 15px;">{{WeatherObject.temp_celcius_min}}°
+    / {{WeatherObject.temp_celcius_max}}°
+  </div>
+  <div class="weatherWidgetRow" style="font-size: 15px; margin-top: 5px;">
+    odczuwalna: {{WeatherObject.temp_feels_like}}°
+  </div>
+  <div class="weatherWidgetRow" style="font-size: 15px; margin-top: 5px;">
+    wilgotność: {{WeatherObject.main.humidity}}%
+  </div>
+
+
+</div>
+<!-- <div id="weatherMainAlt">
+  <div class="weatherWidgetRow"></div>
+  <div class="weatherWidgetRow"></div>
+  <div class="weatherWidgetRow"></div>
+  <div class="weatherWidgetRow"></div>
+
+</div> -->
+
+
+
