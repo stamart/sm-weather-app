@@ -7,7 +7,7 @@ SwiperCore.use([Pagination]);
   selector: 'app-slider',
   template: `
     <swiper [pagination]="true" class="mySwiper">
-    <ng-template swiperSlide><app-search [globalCity]="globalCity"></app-search></ng-template>
+    <ng-template swiperSlide><current-weather [globalCity]="globalCity"></current-weather></ng-template>
     <ng-template swiperSlide><app-weather-app [globalCity]="globalCity"></app-weather-app></ng-template>
     </swiper>
   `,

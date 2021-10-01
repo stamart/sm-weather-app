@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { WeatherAppComponent } from './Component/weather-forecast/weather-app.component';
 import { SwiperModule } from 'swiper/angular';
 import { SliderComponent } from './Component/slider/slider.component';
-import { SearchComponent } from './Component/search-weather/search.component';
+import { currentWeather } from './Component/search-weather/current-weather.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     WeatherAppComponent,
     SliderComponent,
-    SearchComponent,
+    currentWeather,
   ],
   imports: [
     BrowserModule,
