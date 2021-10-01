@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'smWeatherApp';
+  city: string;
+  globalCity: string;
+
+  constructor() {
+    this.city = 'Rzeszow';
+    this.globalCity = 'Rzeszow';
+  }
+
+  searchCityFunction(city: string){
+    this.globalCity = city;
+  }
+
 }
