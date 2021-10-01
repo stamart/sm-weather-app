@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-search',
@@ -6,11 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
   WeatherObject:any;
-
-  constructor() { }
-
+  constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.WeatherObject = {
@@ -40,7 +38,7 @@ export class SearchComponent implements OnInit {
 
   alertMessage(weatherData: any) {
     console.log('Error:',weatherData.message);
-
+    this.snackBar.open(weatherData.message, "close");
   }
 
   errorHandler(err: any) {
@@ -78,4 +76,5 @@ export class SearchComponent implements OnInit {
   private isCorrectResponse(weatherData: any) {
     return weatherData.cod == '200';
   }
+
 }

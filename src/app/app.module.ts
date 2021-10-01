@@ -8,8 +8,8 @@ import { SliderComponent } from './Component/slider/slider.component';
 import { SearchComponent } from './Component/search-weather/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { ConfirmationDialog } from './confirm-dialog/confirmation-dialog';
-
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
