@@ -1,6 +1,6 @@
 <div id="weatherMain">
   <div class="weatherWidgetRow" style="font-size: 35px; margin-top: 10%">{{forecastObject.city.name}}, {{forecastObject.city.country}}</div>
-  <div style="font-size: 15px; margin-top: 15px;" *ngFor="let item of hourlyForecast | slice:0:5">
+  <div style="font-size: 15px; margin-top: 15px;" *ngFor="let item of hourlyForecast | slice:0:2">
     <img style="font-size: 15px; margin-top: 15px;" src="{{getIcon(item.weather[0].icon)}}" />
     <div>{{display(item)}}</div>
   </div>
