@@ -59,11 +59,9 @@ export class ForecastWeather implements OnInit, OnChanges {
 
   }
 
-  display(item: any) {
-    // return this.convertToCelcius(item.main.temp_min) / this.convertToCelcius(item.main.temp_max);
+  getTemperature(item: any) {
     let weather = `${this.convertToCelcius(item.main.temp_min)}°/${this.convertToCelcius(item.main.temp_max)}°`;
     return weather
-
   }
 
   getIcon(icon: any){
