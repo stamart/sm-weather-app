@@ -11,7 +11,7 @@ export class currentWeather implements OnInit, OnChanges {
 
   @Input() globalCity: string;
 
-  WeatherObject: any;
+  weatherObject: any;
 
   constructor(private snackBar: MatSnackBar,private service: WeatherApiService) {
   }
@@ -21,13 +21,13 @@ export class currentWeather implements OnInit, OnChanges {
     }
 
   ngOnInit(): void {
-    this.WeatherObject = {
+    this.weatherObject = {
       city: 'rzeszow',
       main : {},
       isDay: true
     };
-    this.getWeatherObject(this.WeatherObject.city);
-    console.log(this.WeatherObject);
+    this.getWeatherObject(this.weatherObject.city);
+    console.log(this.weatherObject);
   }
 
   getWeatherObject(city :string){
@@ -36,7 +36,7 @@ export class currentWeather implements OnInit, OnChanges {
   }
 
   handlerRespons(weatherData:any){
-    console.log('recived object',weatherData);
+    console.log('current weather',weatherData);
     if(this.isCorrectResponse(weatherData)){
       this.setWeatherObject(weatherData);
     }else {
@@ -54,18 +54,18 @@ export class currentWeather implements OnInit, OnChanges {
   }
 
   setWeatherObject(weatherData: any) {
-    this.WeatherObject = weatherData;
-    let sunsetTime = new Date(this.WeatherObject.sys.sunset * 1000);
-    this.WeatherObject.sunset_time = sunsetTime.toLocaleTimeString();
+    this.weatherObject = weatherData;
+    let sunsetTime = new Date(this.weatherObject.sys.sunset * 1000);
+    this.weatherObject.sunset_time = sunsetTime.toLocaleTimeString();
 
     let currentDate = new Date();
     // this.WeatherObject.isRaining = this.WeatherObject.rain. > 1;
-    this.WeatherObject.isCloudy = this.WeatherObject.clouds.all == 1;
-    this.WeatherObject.isDay = (currentDate.getTime() < sunsetTime.getTime());
-    this.WeatherObject.temp_celcius = this.convertToCelcius(this.WeatherObject.main.temp,1);
-    this.WeatherObject.temp_celcius_min = this.convertToCelcius(this.WeatherObject.main.temp_min,0);
-    this.WeatherObject.temp_celcius_max = this.convertToCelcius(this.WeatherObject.main.temp_max,0);
-    this.WeatherObject.temp_feels_like = this.convertToCelcius(this.WeatherObject.main.feels_like,0);
+    this.weatherObject.isCloudy = this.weatherObject.clouds.all == 1;
+    this.weatherObject.isDay = (currentDate.getTime() < sunsetTime.getTime());
+    this.weatherObject.temp_celcius = this.convertToCelcius(this.weatherObject.main.temp,1);
+    this.weatherObject.temp_celcius_min = this.convertToCelcius(this.weatherObject.main.temp_min,0);
+    this.weatherObject.temp_celcius_max = this.convertToCelcius(this.weatherObject.main.temp_max,0);
+    this.weatherObject.temp_feels_like = this.convertToCelcius(this.weatherObject.main.feels_like,0);
 
   }
 
