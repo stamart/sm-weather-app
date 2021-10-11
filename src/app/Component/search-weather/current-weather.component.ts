@@ -49,10 +49,6 @@ export class currentWeather implements OnInit, OnChanges {
     this.snackBar.open(weatherData.message, "close");
   }
 
-  errorHandler(err: any) {
-    console.log('Error',err);
-  }
-
   setWeatherObject(weatherData: any) {
     this.weatherObject = weatherData;
     let sunsetTime = new Date(this.weatherObject.sys.sunset * 1000);
