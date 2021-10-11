@@ -76,15 +76,6 @@ export class currentWeather implements OnInit, OnChanges {
     return convertedTemp;
   }
 
-  // searchCityFunction(){
-  //   console.log('searchCity',this.WeatherObject.city);
-  //   this.getWeatherObject();
-  // }
-
-  checkGlobalCity(){
-    console.log('searchCity',this.globalCity);
-  }
-
   private isCorrectResponse(weatherData: any) {
     return weatherData.cod == '200';
   }
