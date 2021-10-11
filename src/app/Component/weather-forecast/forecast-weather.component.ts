@@ -42,21 +42,6 @@ export class ForecastWeather implements OnInit, OnChanges {
     this.hourlyForecast = this.forecastObject.list;
     console.log('ForecastObject',this.forecastObject);
 
-
-
-
-    // let sunsetTime = new Date(this.WeatherObject.sys.sunset * 1000);
-    // this.WeatherObject.sunset_time = sunsetTime.toLocaleTimeString();
-    //
-    // let currentDate = new Date();
-    // // this.WeatherObject.isRaining = this.WeatherObject.rain. > 1;
-    // this.WeatherObject.isCloudy = this.WeatherObject.clouds.all == 1;
-    // this.WeatherObject.isDay = (currentDate.getTime() < sunsetTime.getTime());
-    // this.WeatherObject.temp_celcius = this.convertToCelcius(this.WeatherObject.main.temp,1);
-    // this.WeatherObject.temp_celcius_min = this.convertToCelcius(this.WeatherObject.main.temp_min,0);
-    // this.WeatherObject.temp_celcius_max = this.convertToCelcius(this.WeatherObject.main.temp_max,0);
-    // this.forecastObject.temp_feels_like = this.convertToCelcius(this.forecastObject.main.feels_like);
-
   }
 
   getTemperature(item: any) {
