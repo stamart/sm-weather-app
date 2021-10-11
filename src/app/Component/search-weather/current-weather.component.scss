@@ -1,27 +1,13 @@
 #weatherMain{
   display: block;
   border-radius: 10px;
-  width: 150%;
-  height: 150%;
+  height: 100%;
   background: rgb(0,0,0);
   background: linear-gradient(180deg,rgba(0,0,0,1) 0%, rgba(8,7,42,1));
   color: darkgray;
   font-family: 'Arial', Arial, Georgia, Verdana sans-serif;
-  padding-bottom: 15px;
-  padding-top: 10px;
+  padding: 20px;
 }
-
-//#weatherMainAlt{
-//  display: block;
-//  border-radius: 10px;
-//  width: 200px;
-//  height: 220px;
-//  background: rgb(0,0,0);
-//  background: linear-gradient(180deg,rgba(0,0,0,1) 0%, rgba(8,7,42,1));
-//  color: darkgray;
-//  font-family: 'Segoe UI', Tahoma, Geneva, Verdana sans-serif;
-//}
-
 
 .weatherWidgetRow{
   display:block;

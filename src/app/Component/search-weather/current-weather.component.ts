@@ -59,7 +59,7 @@ export class currentWeather implements OnInit, OnChanges {
     this.weatherObject.sunset_time = sunsetTime.toLocaleTimeString();
 
     let currentDate = new Date();
-    // this.WeatherObject.isRaining = this.WeatherObject.rain. > 1;
+    this.weatherObject.isRaining = this.weatherObject.rain > 1;
     this.weatherObject.isCloudy = this.weatherObject.clouds.all == 1;
     this.weatherObject.isDay = (currentDate.getTime() < sunsetTime.getTime());
     this.weatherObject.temp_celcius = this.convertToCelcius(this.weatherObject.main.temp,1);
