@@ -7,7 +7,7 @@ export class WeatherApiService {
 
   response: any;
 
-  apiKey: string = "8e6330f7f437106b517d425eedde9f72";
+  apiKey: string = "";
   currentWeatherUrl: string = "https://api.openweathermap.org/data/2.5/weather";
   ForecastWeatherUrl: string = "https://api.openweathermap.org/data/2.5/forecast"
 
