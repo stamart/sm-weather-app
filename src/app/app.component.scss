@@ -1,0 +1,23 @@
+#weatherMainBlock{
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  //padding: 3%;
+  height: 100vh;
+  background: linear-gradient(45deg,skyblue 0%, midnightblue);
+  font-family: 'Arial', Arial, Georgia, Verdana sans-serif;
+}
+
+.searchBox{
+  margin-top: 20px;
+  position: relative;
+  padding-bottom: 25px;
+  justify-content: center;
+  display: flex;
+
+  //position: absolute;
+  //top: 2%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+}
+

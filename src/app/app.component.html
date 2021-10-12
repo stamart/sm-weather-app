@@ -1,5 +1,8 @@
+<div id="weatherMainBlock" >
+  <div class="searchBox">
+    <input placeholder="searchCity" [(ngModel)]="city">
+    <button (click)="searchCityFunction(city)">szukaj</button>
+  </div>
+  <app-slider [globalCity]="globalCity"></app-slider>
+</div>
 
-
-<app-slider></app-slider>
-
-<!--<app-weather-app></app-weather-app>-->
